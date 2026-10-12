@@ -98,3 +98,17 @@ Created and enabled two reusable Splunk reports:
 ## Disclaimer
 
 All security testing was performed in an isolated, self-managed lab for educational purposes. Results represent controlled test activity, not a real-world incident.
+
+## Screenshots
+
+### Security Monitoring Dashboard
+
+![Splunk security monitoring dashboard](screenshots/Screenshot%202026-10-12%20195243.png)
+
+### Failed Login Investigation
+
+![Failed login investigation in Splunk](screenshots/Screenshot%202026-10-12%20195255.png)
+
+### Kerberoasting Investigation
+
+![Kerberoasting investigation in Splunk](screenshots/Screenshot%202026-10-12%20195302.png)
