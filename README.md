@@ -1,83 +1,100 @@
 # Active Directory & Splunk SIEM Home Lab
 
-A virtualized cybersecurity lab for practicing Windows domain administration, centralized log collection, SIEM investigations, and controlled attack simulations.
+A virtualized cybersecurity lab built to practice Windows domain administration, centralized log collection, and security investigations using Splunk Enterprise.
 
 ## Overview
 
-Built an isolated, four-VM environment using VirtualBox to monitor Windows authentication and endpoint activity through Splunk Enterprise.
+This project uses four virtual machines in an isolated VirtualBox network to monitor Windows authentication activity, analyze endpoint events, and investigate controlled attack simulations.
 
-## Lab Architecture
+## Lab Setup
 
-| Virtual Machine | Role | Technologies |
-|---|---|---|
-| **DC01** | Domain controller | Windows Server 2025, Active Directory, DNS |
-| **PC01** | Domain-joined endpoint | Windows 11, Splunk Universal Forwarder |
-| **Ubuntu / Splunk** | SIEM server | Ubuntu Server 24.04.4 LTS, Splunk Enterprise |
-| **Kali Linux** | Security testing | Kali Linux, controlled attack simulations |
+**DC01 — Domain Controller**
+- Windows Server 2025
+- Active Directory Domain Services
+- DNS and Group Policy
 
-**Network:** Isolated VirtualBox host-only network (`192.168.56.0/24`)
+**PC01 — Windows Client**
+- Windows 11
+- Joined to the Active Directory domain
+- Splunk Universal Forwarder
 
-## Technologies Used
+**Ubuntu — SIEM Server**
+- Ubuntu Server 24.04.4 LTS
+- Splunk Enterprise
+- Centralized Windows log collection
 
-- **Identity:** Active Directory, Group Policy, DNS, domain users and groups
+**Kali Linux — Testing Machine**
+- Used to generate controlled security-testing activity
+- Used for failed-login and Kerberoasting simulations
+
+**Network:** VirtualBox host-only network (`192.168.56.0/24`)
+
+## Technologies
+
 - **SIEM:** Splunk Enterprise, Splunk Universal Forwarder, SPL
-- **Endpoint monitoring:** Windows Security Event Logs, Sysmon
-- **Security testing:** Kali Linux, failed-login testing, Kerberoasting simulation
+- **Windows Security:** Active Directory, Group Policy, DNS, Windows Security Event Logs
+- **Endpoint Monitoring:** Sysmon
+- **Security Testing:** Kali Linux, failed-login testing, Kerberos service-ticket investigation
 - **Virtualization:** Oracle VirtualBox
 
 ## Security Investigations
 
-### 1. Failed Login Analysis
+### Failed Login Analysis
 
-- Investigated Windows Security Event ID **4625**.
-- Used SPL `rex` to extract account names and source IP addresses from raw XML.
-- Aggregated events using `stats` and filtered repeated failures using `where`.
-- Recorded test results included 6 failures for `FakeLabUser` and 5 for `Administrator` from the Kali test IP.
+- Investigated Windows Security Event ID `4625`.
+- Extracted usernames and source IP addresses from raw XML event data using SPL `rex`.
+- Aggregated failed-login events by account and source IP using `stats`.
+- Applied a threshold of five or more failures using `where`.
+- Recorded test results included six failures for `FakeLabUser` and five for `Administrator` from the Kali test IP.
 
-### 2. Kerberos Service-Ticket Investigation
+### Kerberos Service-Ticket Investigation
 
-- Investigated Windows Security Event ID **4769**.
+- Investigated Windows Security Event ID `4769`.
 - Conducted a controlled Kerberoasting simulation involving the `SQLService` account.
-- Extracted source IP information and identified 3 matching service-ticket events associated with Kali Linux.
+- Extracted the source IP address from raw event data.
+- Identified three matching service-ticket events associated with Kali Linux.
+- Investigated the results in Splunk Search & Reporting.
 
-### 3. Sysmon Monitoring
+### Sysmon Monitoring
 
 - Collected Sysmon Operational event data.
-- Extracted event IDs from XML logs and aggregated event counts using SPL.
-- Visualized endpoint activity in Splunk Dashboard Studio.
+- Extracted event IDs from XML-formatted logs.
+- Aggregated event counts using SPL.
+- Visualized endpoint activity in a custom dashboard.
 
 ## Splunk Dashboard
 
-Created a four-panel **Security Monitoring Dashboard**:
+Created a four-panel dashboard named **Security Monitoring Dashboard**.
 
-1. Failed Login Attempts Over Time
-2. Kerberoasting Activity by Source IP
-3. Sysmon Events by Event ID
-4. Failed Login Attempts by Account
+- Failed Login Attempts Over Time
+- Kerberoasting Activity by Source IP
+- Sysmon Events by Event ID
+- Failed Login Attempts by Account
 
 ## Saved Searches
+
+Created and enabled two reusable Splunk reports:
 
 - `Failed Login Investigation by Source IP and Account`
 - `Kerberoasting - SQLService Ticket Activity`
 
-Both saved reports are enabled in Splunk.
-
 ## Skills Demonstrated
 
 - Active Directory and Windows Server administration
-- SIEM deployment and centralized log collection
+- Centralized log collection and SIEM configuration
 - SPL query development and XML field extraction
 - Windows authentication event analysis
 - Kerberos service-ticket investigation
-- Sysmon endpoint telemetry analysis
-- Dashboard development and troubleshooting
+- Sysmon endpoint monitoring
+- Security dashboard development
+- Virtual machine networking and troubleshooting
 
 ## Future Improvements
 
 - Add screenshots of the dashboard and investigation results.
-- Expand detection coverage to account creation and privileged-group changes.
-- Explore automated alerting with a Splunk license that supports it.
+- Expand monitoring to account creation and privileged-group changes.
+- Implement automated alerting if using a Splunk license that supports it.
 
 ## Disclaimer
 
-All security testing was performed in an isolated, self-managed lab for educational purposes. Findings represent controlled test activity, not a real-world incident.
+All security testing was performed in an isolated, self-managed lab for educational purposes. Results represent controlled test activity, not a real-world incident.
