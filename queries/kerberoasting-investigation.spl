@@ -1,0 +1,3 @@
+index=* host="WIN-THB17VDR2SD" "4769" "SQLService"
+| rex field=_raw "Data Name='IpAddress'>(?<SourceIP>[^<]+)"
+| stats count by SourceIP
