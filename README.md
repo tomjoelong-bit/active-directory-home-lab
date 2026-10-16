@@ -107,17 +107,16 @@ All security testing was performed in an isolated, self-managed lab for educatio
 
 ### Failed Login Investigation
 
-Project Files
-
-Splunk investigation queries
-
-Failed-login SPL search
-
-Kerberos investigation SPL search
-
 Lab screenshots
 ![Failed login investigation in Splunk](screenshots/Screenshot%202026-10-12%20195255.png)
 
 ### Kerberoasting Investigation
 
 ![Kerberoasting investigation in Splunk](screenshots/Screenshot%202026-10-12%20195302.png)
+
+## Project Files
+
+- [Splunk investigation queries](queries/README.md)
+- [Failed-login SPL search](queries/failed-login-investigation.spl)
+- [Kerberos investigation SPL search](queries/kerberoasting-investigation.spl)
+- [Lab screenshots](screenshots/)
