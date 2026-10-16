@@ -91,9 +91,9 @@ Created and enabled two reusable Splunk reports:
 
 ## Future Improvements
 
-- Add screenshots of the dashboard and investigation results.
 - Expand monitoring to account creation and privileged-group changes.
 - Implement automated alerting if using a Splunk license that supports it.
+- Refine dashboard panels to make investigation results easier to interpret.
 
 ## Disclaimer
 
