@@ -103,15 +103,15 @@ All security testing was performed in an isolated, self-managed lab for educatio
 
 ### Failed Login Attempts Over Time
 
-![Failed Login Attempts Over Time](screenshots/Screenshot%202026-10-12%20195243.png)
+![Failed Login Attempts Over Time](screenshots/failed-login-timeline.png)
 
 ### Kerberoasting Activity by Source IP
 
-![Kerberoasting Activity by Source IP](screenshots/Screenshot%202026-10-12%20195255.png)
+![Kerberoasting Activity by Source IP](screenshots/kerberoasting-source-ip.png)
 
 ### Sysmon Events by Event ID
 
-![Sysmon Events by Event ID](screenshots/Screenshot%202026-10-12%20195302.png)
+![Sysmon Events by Event ID](screenshots/sysmon-event-counts.png)
 
 ## Project Files
 
