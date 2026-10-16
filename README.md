@@ -101,18 +101,17 @@ All security testing was performed in an isolated, self-managed lab for educatio
 
 ## Screenshots
 
-### Security Monitoring Dashboard
+### Failed Login Attempts Over Time
 
-![Splunk security monitoring dashboard](screenshots/Screenshot%202026-10-12%20195243.png)
+![Failed Login Attempts Over Time](screenshots/Screenshot%202026-10-12%20195243.png)
 
-### Failed Login Investigation
+### Kerberoasting Activity by Source IP
 
-Lab screenshots
-![Failed login investigation in Splunk](screenshots/Screenshot%202026-10-12%20195255.png)
+![Kerberoasting Activity by Source IP](screenshots/Screenshot%202026-10-12%20195255.png)
 
-### Kerberoasting Investigation
+### Sysmon Events by Event ID
 
-![Kerberoasting investigation in Splunk](screenshots/Screenshot%202026-10-12%20195302.png)
+![Sysmon Events by Event ID](screenshots/Screenshot%202026-10-12%20195302.png)
 
 ## Project Files
 
