@@ -48,6 +48,7 @@ This project uses four virtual machines in an isolated VirtualBox network to mon
 - Recorded test results included six failures for `FakeLabUser` and five for `Administrator` from the Kali test IP.
   
 **Findings:** The investigation identified 6 failed login attempts for `FakeLabUser` and 5 for `Administrator`, originating from the Kali Linux test IP (`192.168.56.105`).
+
 **Response:** Investigate the source IP and targeted accounts, review surrounding authentication events, and consider account lockout policies if the activity is unauthorized.
 
 ### Kerberos Service-Ticket Investigation
