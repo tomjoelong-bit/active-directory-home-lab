@@ -41,6 +41,7 @@ This project uses four virtual machines in an isolated VirtualBox network to mon
 
 ### Failed Login Analysis
 
+- **MITRE ATT&CK:** T1110 — Brute Force (controlled failed-login simulation).
 - Investigated Windows Security Event ID `4625`.
 - Extracted usernames and source IP addresses from raw XML event data using SPL `rex`.
 - Aggregated failed-login events by account and source IP using `stats`.
@@ -53,6 +54,7 @@ This project uses four virtual machines in an isolated VirtualBox network to mon
 
 ### Kerberos Service-Ticket Investigation
 
+- **MITRE ATT&CK:** T1558.003 — Kerberoasting (controlled lab simulation).
 - Investigated Windows Security Event ID `4769`.
 - Conducted a controlled Kerberoasting simulation involving the `SQLService` account.
 - Extracted the source IP address from raw event data.
