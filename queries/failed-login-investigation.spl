@@ -1,4 +1,3 @@
-
 index=* host="WIN-THB17VDR2SD" "4625"
 | rex field=_raw "Data Name='TargetUserName'>(?<TargetUserName>[^<]+)"
 | rex field=_raw "Data Name='IpAddress'>(?<SourceIP>[^<]+)"
