@@ -59,6 +59,10 @@ This project uses four virtual machines in an isolated VirtualBox network to mon
 - Identified three matching service-ticket events associated with Kali Linux.
 - Investigated the results in Splunk Search & Reporting.
 
+**Findings:** The controlled Kerberoasting simulation generated Event ID `4769` activity associated with the `SQLService` account. Splunk identified 3 matching events from the Kali test IP (`192.168.56.105`).
+
+**Response:** Review the requesting computer, service account, ticket encryption type, and surrounding authentication activity to determine whether the requests are suspicious.
+
 ### Sysmon Monitoring
 
 - Collected Sysmon Operational event data.
