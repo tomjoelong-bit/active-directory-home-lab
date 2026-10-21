@@ -83,6 +83,7 @@ index=* host="WIN-THB17VDR2SD" "4625"
 | rex field=_raw "Data Name='IpAddress'>(?<SourceIP>[^<]+)"
 | stats count by SourceIP TargetUserName
 | sort -count
+| where count >= 5
 ```
 
 **Findings:** The investigation identified 6 failed login attempts for `FakeLabUser` and 5 for `Administrator`, originating from the Kali Linux test IP (`192.168.56.105`).

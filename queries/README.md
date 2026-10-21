@@ -10,6 +10,7 @@ These SPL searches were developed for my Active Directory and Splunk SIEM home l
 - Extracts account names and source IP addresses from raw XML event data.
 - Counts failed logins by account and source IP.
 - Sorts results by the highest number of failures.
+- Keeps only account/source pairs with five or more failures (`where count >= 5`).
 
 **Goal:** Investigate repeated authentication failures and identify the accounts and sources involved.
 
