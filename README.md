@@ -169,6 +169,10 @@ All security testing was performed in an isolated, self-managed lab for educatio
 
 ![Sysmon Events by Event ID](screenshots/sysmon-event-counts.png)
 
+### Failed Login Attempts by Account
+
+![Failed Login Attempts by Account](screenshots/failed-logins-by-account.png)
+
 ## Project Files
 
 - [Splunk investigation queries](queries/README.md)
