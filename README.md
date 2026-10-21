@@ -83,6 +83,7 @@ index=* host="WIN-THB17VDR2SD" "4625"
 | rex field=_raw "Data Name='IpAddress'>(?<SourceIP>[^<]+)"
 | stats count by SourceIP TargetUserName
 | sort -count
+| where count >= 5
 ```
 
 **Findings:** The investigation identified 6 failed login attempts for `FakeLabUser` and 5 for `Administrator`, originating from the Kali Linux test IP (`192.168.56.105`).
@@ -167,6 +168,10 @@ All security testing was performed in an isolated, self-managed lab for educatio
 ### Sysmon Events by Event ID
 
 ![Sysmon Events by Event ID](screenshots/sysmon-event-counts.png)
+
+### Failed Login Attempts by Account
+
+![Failed Login Attempts by Account](screenshots/failed-logins-by-account.png)
 
 ## Project Files
 
